@@ -2,22 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+作者：lancelot_lewis
+链接：https://www.jianshu.com/p/a2330937de6c
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
   
 
   
   <title>&#39;my-first-blog&#39; | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="啥都没有~">
+  <meta name="description" content="the pass-word~">
+<meta name="keywords" content="hexo~,加密">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;my-first-blog&#39;">
 <meta property="og:url" content="http://yoursite.com/2018/08/06/my-first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="啥都没有~">
+<meta property="og:description" content="the pass-word~">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-06T06:56:23.864Z">
+<meta property="og:updated_time" content="2018-08-07T08:46:41.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;my-first-blog&#39;">
-<meta name="twitter:description" content="啥都没有~">
+<meta name="twitter:description" content="the pass-word~">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -70,6 +86,10 @@
   <time datetime="2018-08-06T06:54:40.000Z" itemprop="datePublished">2018-08-06</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/test/">test</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -91,9 +111,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/06/my-first-blog/" data-id="cjkhxaemx00016kqrd7b506zm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/06/my-first-blog/" data-id="cjkjgs6yo0001o4qr2ez2vgoc" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -116,12 +138,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
