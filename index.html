@@ -242,7 +242,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/blog/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">4</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">5</span></a>
   </li>
 
       
@@ -277,6 +277,203 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://silveryC.github.io/blog/2019/03/13/随机一题：58-最后一个单词的长度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sheng.C">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耗子窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/03/13/随机一题：58-最后一个单词的长度/" itemprop="url">
+                  随机一题：58-最后一个单词的长度
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-13 08:54:31" itemprop="dateCreated datePublished" datetime="2019-03-13T08:54:31+08:00">2019-03-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-15 15:40:13" itemprop="dateModified" datetime="2019-03-15T15:40:13+08:00">2019-03-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><hr>
+<p><a href="https://leetcode-cn.com/problems/length-of-last-word/description/" target="_blank" rel="noopener">@Link 题目地址</a></p>
+<p>给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。<br>如果不存在最后一个单词，请返回 0 。<br>说明：一个单词是指由字母组成，但不包含任何空格的字符串。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;Hello World&quot;</span><br><span class="line">输出: 5</span><br></pre></td></tr></table></figure>
+<h2 id="解题方案"><a href="#解题方案" class="headerlink" title="解题方案"></a>解题方案</h2><hr>
+<p>思路：</p>
+<blockquote>
+<p>用 java 的 <code>split</code>函数分割字符串，取出最后一个即可达到目的</p>
+</blockquote>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer1</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">    String[] sc = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">if</span>(sc.length == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sc[sc.length - <span class="number">1</span>].length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552610027_18447.png" alt=""></p>
+<p>思路：</p>
+<blockquote>
+<p> 第一种方案的执行数据慢，说明<code>split</code>函数相当消耗时间（时间复杂度跟空间复杂度过高）<br> 那么我们不使用该函数了<br>首先应该考虑最后一个单词所在位置，它的前面一定是一个空格，它的后面可能没有任何字符，也可能是若干个空格<br>那么首先可以考虑把最后一个单词后面可能存在的空格去掉 ，  使用 <code>trim</code>函数 （也可以自己写方法去掉）<br>然后使用字符串索引函数找出最后一个空格的 index下标  ，简单的方法是使用<code>lastIndexOf</code><br>然后用字符串的长度减去最后一个空格下标再减去1 即可</p>
+</blockquote>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer2</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">    s = s.trim();</span><br><span class="line">    <span class="keyword">int</span> lastSpaceIndex = s.lastIndexOf(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">return</span> s.length() - lastSpaceIndex - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<br>资源消耗较多，但是速度上去了。。</p>
+<p><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552611874_26434.png" alt=""></p>
+<p>思路：</p>
+<blockquote>
+<p>和方案2差不多的思路，但是不使用特别高性能的函数 ，如 <code>trim</code>等</p>
+</blockquote>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer3</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> size  = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span> ;  i &gt;= <span class="number">0</span>; i-- )&#123;</span><br><span class="line">            <span class="keyword">if</span>(size != <span class="number">0</span>  &amp;&amp; s.charAt(i) == <span class="string">' '</span>)&#123;<span class="keyword">break</span>;&#125;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) == <span class="string">' '</span>)&#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) != <span class="string">' '</span>)&#123;size++;&#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552614947_10549.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -497,7 +694,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-10 17:44:21" itemprop="dateModified" datetime="2019-03-10T17:44:21+08:00">2019-03-10</time>
+                <time title="修改时间：2019-03-15 09:45:37" itemprop="dateModified" datetime="2019-03-15T09:45:37+08:00">2019-03-15</time>
               
             
           </span>
@@ -627,7 +824,7 @@
 </blockquote>
 <h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><hr>
 <ol>
-<li><p>在方案一中采用了箭头表达式，但是当我想使用 <code>int jewelsInStones = 0;</code>；来记数时却以外抛出异，原因是箭头表达式里面都不允许有修改变量的倾向 ， 所以一个技巧是，需要将变量放在数组里面。。</p>
+<li><p>在方案一中采用了箭头表达式，但是当我想使用 <code>int jewelsInStones = 0;</code>；来记数时却以外抛出异，原因是箭头表达式里面都不允许有修改变量的倾向 ， 所以一个技巧是，需要将变量放在数组里面。。 <a href="https://www.cnblogs.com/zl0372/p/springBoot_error_3.html" target="_blank" rel="noopener">@Link 参考链接</a></p>
 </li>
 <li><p>看见别人在leetcode上面采用c++ 解这道题，同样是双重for循环，效率好高。。</p>
 </li>
@@ -1068,7 +1265,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
