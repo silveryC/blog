@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 16:57:39" itemprop="dateModified" datetime="2019-03-15T16:57:39+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-15 17:09:30" itemprop="dateModified" datetime="2019-03-15T17:09:30+08:00">2019-03-15</time>
               
             
           </span>
@@ -808,7 +808,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-10 17:11:37" itemprop="dateModified" datetime="2019-03-10T17:11:37+08:00">2019-03-10</time>
+                <time title="修改时间：2019-03-15 17:07:29" itemprop="dateModified" datetime="2019-03-15T17:07:29+08:00">2019-03-15</time>
               
             
           </span>
@@ -876,8 +876,9 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span>(l1.Num)  <span class="keyword">as</span> ConsecutiveNums</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">Logs</span> l1 , <span class="keyword">Logs</span> l2, <span class="keyword">Logs</span> l3</span><br><span class="line"><span class="keyword">where</span> l1.Id = l2.Id+<span class="number">1</span> <span class="keyword">and</span> l1.Id = l3.Id + <span class="number">2</span> <span class="keyword">and</span> l1.Num = l2.Num <span class="keyword">and</span> l2.Num = l3.Num;</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <blockquote>
-<p>三次自关联，在一定程度上非常占用系统资源，尤其是在表数据量较大的情况下，查询非常的耗时<br><img src="/blog/2019/02/22/180-连续出现的数字/1552209096_16500.png" alt=""></p>
+<p>三次自关联，在一定程度上非常占用系统资源，尤其是在表数据量较大的情况下，查询非常的耗时</p>
 </blockquote>
+<p> <img src="/blog/2019/02/22/180-连续出现的数字/1552209096_16500.png" alt=""></p>
 
           
         
