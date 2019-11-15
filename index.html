@@ -234,7 +234,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/blog/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">3</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">4</span></a>
   </li>
         
         
@@ -242,7 +242,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/blog/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">5</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">6</span></a>
   </li>
 
       
@@ -277,6 +277,176 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://silveryC.github.io/blog/2019/11/15/logback源码阅读-如何阅读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sheng.C">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="耗子窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/11/15/logback源码阅读-如何阅读/" itemprop="url">
+                  logback源码阅读-如何阅读
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-15 09:35:23 / 修改时间：10:09:44" itemprop="dateCreated datePublished" datetime="2019-11-15T09:35:23+08:00">2019-11-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/logback/" itemprop="url" rel="index"><span itemprop="name">logback</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p> 虽然是一名小白，但是在项目里面使用日志记录库也有很多次了；<br> 之前都是看了一些简单如何配置日志的文章，依葫芦画瓢的配置；<br> 但是对于原理、logback、log2j 什么的关联关系都一无所知；<br> 所以就想着阅读一下源码。</p>
+<hr>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>看了网上很多的源码阅读方式，总结了出来就是，你必须下载源码；<br>但是下载源码过后呢？从哪里开始看？怎么看？都是问题。<br>所以我去找了大佬咨询。。。<br>这里列出大佬给我的建议：</p>
+<blockquote>
+<ol>
+<li>到github上去fork一份logback的源码到自己的仓库；</li>
+<li>把自己仓库的logback源码克隆到本地；</li>
+<li>建立demo项目关联本地源码，调试阅读logback源码，并在源码上做笔记；</li>
+<li>因为是自己的仓库源码，笔记可以直接push到github上永久保存；</li>
+<li>做项目使用logback的时候，关联本地源码（带有自己的笔记），这样做项目调试的时候，可以顺便巩固之前阅读的源码内容；</li>
+</ol>
+</blockquote>
+<p>这个方案让我简直眼睛一亮，不仅可以用来阅读logback，还适用于所有的其他源码阅读，所以我决定尝试一下</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -483,7 +653,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/blog/2019/03/13/随机一题：58-最后一个单词的长度/" itemprop="url">
-                  随机一题：58-最后一个单词的长度
+                  58.最后一个单词的长度
                 </a>
               
             
@@ -526,7 +696,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:09:30" itemprop="dateModified" datetime="2019-03-15T17:09:30+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-22 08:41:22" itemprop="dateModified" datetime="2019-03-22T08:41:22+08:00">2019-03-22</time>
               
             
           </span>
@@ -680,7 +850,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/blog/2019/03/07/771-宝石与石头-1/" itemprop="url">
-                  随机一题： 771. 宝石与石头
+                  771.宝石与石头
                 </a>
               
             
@@ -723,7 +893,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:00:49" itemprop="dateModified" datetime="2019-03-15T17:00:49+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-22 08:41:34" itemprop="dateModified" datetime="2019-03-22T08:41:34+08:00">2019-03-22</time>
               
             
           </span>
@@ -1299,7 +1469,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1318,7 +1488,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1349,7 +1521,7 @@
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/silveryC" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/pluscao" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
                 </span>
               
