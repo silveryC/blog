@@ -339,7 +339,7 @@
                 
               
 
-              <time title="创建时间：2019-11-20 15:44:37 / 修改时间：16:05:00" itemprop="dateCreated datePublished" datetime="2019-11-20T15:44:37+08:00">2019-11-20</time>
+              <time title="创建时间：2019-11-20 15:44:37 / 修改时间：16:44:32" itemprop="dateCreated datePublished" datetime="2019-11-20T15:44:37+08:00">2019-11-20</time>
             
 
             
@@ -398,8 +398,8 @@
         
           
             <p><a href="https://pluscao.github.io/blog/2019/11/15/logback%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-%E8%B7%9F%E7%9D%80%E6%96%87%E6%A1%A3%E5%BC%80%E5%A7%8B/" target="_blank" rel="noopener">上一篇：logback源码阅读-跟着文档开始</a></p>
-<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一篇大致的浏览了一下获取一个logger，所干的事情，这里先回顾一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">actor &quot;用户&quot; as A</span><br><span class="line">participant &quot;界面&quot; as B</span><br><span class="line">database &quot;订单数据库&quot; as F</span><br><span class="line"></span><br><span class="line">A -&gt; B: 选中商品，点击购买按钮</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一篇大致的浏览了一下获取一个logger，所干的事情，这里先回顾一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">actor &quot;用户&quot; as A</span><br><span class="line">participant &quot;界面&quot; as B</span><br><span class="line">database &quot;订单数据库&quot; as F</span><br><span class="line"></span><br><span class="line">A -&gt; B: 选中商品，点击购买按钮</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure></p>
+<img src="http://www.plantuml.com/plantuml/svg/SyfFqhLppCbCJbMmKiX8pSd91m00">
           
         
       
@@ -572,7 +572,7 @@
 <h1 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h1><p>上一篇我们已经准备好了我们的阅读环境，现在我们可以正式开始调试阅读了；<br>既然是调试阅读，我们就需要写一些基础的代码了，没有什么是比<a href="http://logback.qos.ch/manual/introduction.html" target="_blank" rel="noopener">logback官方文档</a>更适合直到我们写代码的了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch.qos.logback;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello world!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Logger logger = LoggerFactory.getLogger(<span class="string">"chapters.introduction.HelloWorld1"</span>);</span><br><span class="line">        logger.debug(<span class="string">"Hello world!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行主函数，得到输出的结果如下图：</p>
-<p><img src="/blog/2019/11/15/logback源码阅读-跟着文档开始/20191115143809766_22248.png" alt=""></p>
+<p><img src="_v_images/20191115143809766_22248.png" alt=""></p>
 <p>很明显日志打印的结果由以下几个部分组成：</p>
 <ul>
 <li>时间</li>
@@ -607,7 +607,7 @@
 <ul>
 <li><a href="#performInitialization()方法展开">performInitialization()方法展开</a></li>
 </ul>
-<p>方法返回类型：<strong>SLF4JServiceProvider</strong>实际上一个接口类（一看就是一个规范）；<br>当我查看他的实现的时候发现有三个<br><code>NOPServiceProvider</code>类 ；<code>SubstituteServiceProvider</code>类 ；<code>LogbackServiceProvider</code>类<br>至于这里怎么使用具体要看<code>INITIALIZATION_STATE</code> 常量的值，建议先看：<a href="#LoggerFactory.INITIALIZATION_STATE">附录： LoggerFactory.INITIALIZATION_STATE</a><br><img src="/blog/2019/11/15/logback源码阅读-跟着文档开始/20191119154524577_7245.png" alt=""></p>
+<p>方法返回类型：<strong>SLF4JServiceProvider</strong>实际上一个接口类（一看就是一个规范）；<br>当我查看他的实现的时候发现有三个<br><code>NOPServiceProvider</code>类 ；<code>SubstituteServiceProvider</code>类 ；<code>LogbackServiceProvider</code>类<br>至于这里怎么使用具体要看<code>INITIALIZATION_STATE</code> 常量的值，建议先看：<a href="#LoggerFactory.INITIALIZATION_STATE">附录： LoggerFactory.INITIALIZATION_STATE</a><br><img src="_v_images/20191119154524577_7245.png" alt=""></p>
 <p>当我们成功初始化过后，会返回具体 ， logback里面的是 <code>LogbackServiceProvider</code>类【以后再说这个】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> SLF4JServiceProvider <span class="title">getProvider</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (INITIALIZATION_STATE == UNINITIALIZED) &#123;</span><br><span class="line">        <span class="comment">// 第一次会进入这里创建新的提供商（很明显这里加了同步锁，为了保证创建一个）</span></span><br><span class="line">        <span class="keyword">synchronized</span> (LoggerFactory.class) &#123;</span><br><span class="line">            <span class="keyword">if</span> (INITIALIZATION_STATE == UNINITIALIZED) &#123;</span><br><span class="line">                INITIALIZATION_STATE = ONGOING_INITIALIZATION;</span><br><span class="line">                <span class="comment">// 真正的创建提供商，跳转到： performInitialization()方法展开</span></span><br><span class="line">                performInitialization();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">switch</span> (INITIALIZATION_STATE) &#123;</span><br><span class="line">    <span class="keyword">case</span> SUCCESSFUL_INITIALIZATION:</span><br><span class="line">        <span class="comment">// 成功的返回指定的日志框架系统的provider</span></span><br><span class="line">        <span class="keyword">return</span> PROVIDER;</span><br><span class="line">    <span class="keyword">case</span> NOP_FALLBACK_INITIALIZATION:</span><br><span class="line">        <span class="keyword">return</span> NOP_FALLBACK_FACTORY;</span><br><span class="line">    <span class="keyword">case</span> FAILED_INITIALIZATION:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(UNSUCCESSFUL_INIT_MSG);</span><br><span class="line">    <span class="keyword">case</span> ONGOING_INITIALIZATION:</span><br><span class="line">        <span class="keyword">return</span> SUBST_PROVIDER;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Unreachable code"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p><strong>performInitialization()方法展开</strong><span id="performInitialization()方法展开"></span></p>
@@ -796,18 +796,18 @@
           
             <p><a href="https://pluscao.github.io/blog/2019/11/15/logback源码阅读-如何阅读" target="_blank" rel="noopener">上一篇：logback源码阅读-如何阅读</a></p>
 <p>#阅读环境搭建</p>
-<h2 id="logback-源码克隆"><a href="#logback-源码克隆" class="headerlink" title="logback 源码克隆"></a>logback 源码克隆</h2><p>跟着上一篇的步骤，首先先去fork一下<a href="https://github.com/qos-ch/logback" target="_blank" rel="noopener">logback的源码</a>，然后克隆到本地，我用了 IDEA 作为编辑工具；<br>logback有很多分支，我选择的了master，版本信息还是”1.3.0-alpha5-SNAPSHOT”（选啥都行）<br>注意： logback是用maven管理项目的，当maven同步完成的时候，最好是编译一下代码免得出现问题<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191120142826062_5515.png" alt=""><br>搞定了源码，我们就开始创建debug用的项目了，可以新建一个全新的项目，也可以在当前的源码项目中创建一个调试用的模块（这种最方便，而且是自己的仓库，可以无法无天的搞）我们新建一个模块：<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191115104923289_5130.png" alt=""></p>
-<p>名字自己的起一个就好了<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191115105400583_15643.png" alt=""></p>
+<h2 id="logback-源码克隆"><a href="#logback-源码克隆" class="headerlink" title="logback 源码克隆"></a>logback 源码克隆</h2><p>跟着上一篇的步骤，首先先去fork一下<a href="https://github.com/qos-ch/logback" target="_blank" rel="noopener">logback的源码</a>，然后克隆到本地，我用了 IDEA 作为编辑工具；<br>logback有很多分支，我选择的了master，版本信息还是”1.3.0-alpha5-SNAPSHOT”（选啥都行）<br>注意： logback是用maven管理项目的，当maven同步完成的时候，最好是编译一下代码免得出现问题<br><img src="_v_images/20191120142826062_5515.png" alt=""><br>搞定了源码，我们就开始创建debug用的项目了，可以新建一个全新的项目，也可以在当前的源码项目中创建一个调试用的模块（这种最方便，而且是自己的仓库，可以无法无天的搞）我们新建一个模块：<br><img src="_v_images/20191115104923289_5130.png" alt=""></p>
+<p>名字自己的起一个就好了<br><img src="_v_images/20191115105400583_15643.png" alt=""></p>
 <p>然后呢？既然我们的项目时用来调试logback用的，当然需要引入logback的依赖：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;version&gt;1.0.14-SNAPSHOT&lt;/version&gt; 这个版本号要和自己下载的源码保持一致，这样会自动关联当前项目的源码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.14-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-access<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.14-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.14-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>由于引入依赖时，maven会做两种操作：</p>
 <ol>
 <li>引入当前项目的其他模块，跳转源码，就是本地的源码；</li>
-<li>引入其他项目 ，那么下载相关的jar包，此时我们跳转源码，实际上是看的编译后的.class文件，并不是源码；<br>而在maven管理中右击就是可以去下载源码的，一旦下载了源码，跳转源码就会跳转到.java文件中；<br>但是！这个是下载的网上的源码，不是我们本地的仓库源码，所以千万不要使用这个。<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191115111540370_31643.png" alt=""></li>
+<li>引入其他项目 ，那么下载相关的jar包，此时我们跳转源码，实际上是看的编译后的.class文件，并不是源码；<br>而在maven管理中右击就是可以去下载源码的，一旦下载了源码，跳转源码就会跳转到.java文件中；<br>但是！这个是下载的网上的源码，不是我们本地的仓库源码，所以千万不要使用这个。<br><img src="_v_images/20191115111540370_31643.png" alt=""></li>
 </ol>
-<p>如何关联源码呢？可以到project structure中设置libraries，添加本地源码的地址，就可以了<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191115134250425_31053.png" alt=""></p>
+<p>如何关联源码呢？可以到project structure中设置libraries，添加本地源码的地址，就可以了<br><img src="_v_images/20191115134250425_31053.png" alt=""></p>
 <p>（我是就在logback源码项目创建的模块，所以这里不需要引入源码的步骤）</p>
 <hr>
-<h2 id="slf4j-源码克隆"><a href="#slf4j-源码克隆" class="headerlink" title="slf4j 源码克隆"></a>slf4j 源码克隆</h2><p><a href="https://github.com/qos-ch/slf4j" target="_blank" rel="noopener">slf4j的源码</a><br>为什么要克隆slf4j的源码呢？因为logback重度依赖slf4j；<br>我们之后阅读的源码很多都会是slf4j的，所以这里要提前克隆号slf4j的代码；<br>注意：<br>由于slf4j和logback是两个项目，而我们创建的调试模块在logback里面，引入源码，步骤和上面的一致，这里就不赘述了，只展示一下引入后的结果<br>最后:注意slf4j源码的版本要切换的和logback依赖的一致，我选的版本依赖的是“2.0.0-alpha1”，所以要找slf4j源码版本为“2.0.0-alpha1”的分支（有可能没有单独版本分支，我是到git提交日志里面找到的版本…）<br><img src="/blog/2019/11/15/logback源码阅读-准备工作/20191120143051158_3829.png" alt=""><br><a href="https://pluscao.github.io/blog/2019/11/15/logback源码阅读-跟着文档开始" target="_blank" rel="noopener">下一篇：logback源码阅读-跟着文档开始</a></p>
+<h2 id="slf4j-源码克隆"><a href="#slf4j-源码克隆" class="headerlink" title="slf4j 源码克隆"></a>slf4j 源码克隆</h2><p><a href="https://github.com/qos-ch/slf4j" target="_blank" rel="noopener">slf4j的源码</a><br>为什么要克隆slf4j的源码呢？因为logback重度依赖slf4j；<br>我们之后阅读的源码很多都会是slf4j的，所以这里要提前克隆号slf4j的代码；<br>注意：<br>由于slf4j和logback是两个项目，而我们创建的调试模块在logback里面，引入源码，步骤和上面的一致，这里就不赘述了，只展示一下引入后的结果<br>最后:注意slf4j源码的版本要切换的和logback依赖的一致，我选的版本依赖的是“2.0.0-alpha1”，所以要找slf4j源码版本为“2.0.0-alpha1”的分支（有可能没有单独版本分支，我是到git提交日志里面找到的版本…）<br><img src="_v_images/20191120143051158_3829.png" alt=""><br><a href="https://pluscao.github.io/blog/2019/11/15/logback源码阅读-跟着文档开始" target="_blank" rel="noopener">下一篇：logback源码阅读-跟着文档开始</a></p>
 
           
         
@@ -1148,7 +1148,7 @@
 </blockquote>
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; ls =  <span class="keyword">new</span> ArrayList&lt;&gt;(numRows);</span><br><span class="line"></span><br><span class="line">        List&lt;Integer&gt; innerList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; numRows ; i++)&#123;</span><br><span class="line">            ArrayList&lt;Integer&gt; inList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            inList.add(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt; i+<span class="number">1</span> ; j++)&#123;</span><br><span class="line">                Integer cal1 = <span class="number">0</span>;</span><br><span class="line">                Integer cal2 = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    cal1 = innerList.get(j) == <span class="keyword">null</span> ? <span class="number">0</span> : innerList.get(j);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    <span class="comment">//<span class="doctag">TODO:</span> do nothing</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    cal2 = innerList.get(j-<span class="number">1</span>) == <span class="keyword">null</span> ? <span class="number">0</span> : innerList.get(j -<span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    <span class="comment">//<span class="doctag">TODO:</span> do nothing</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                inList.add(cal1 + cal2);</span><br><span class="line">            &#125;</span><br><span class="line">            innerList = inList;</span><br><span class="line">            ls.add(innerList);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ls;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：资源消耗大，速度一般<br><img src="/blog/2019/03/22/杨辉三角/1553214750_987.png" alt=""></p>
+<p>结果：资源消耗大，速度一般<br><img src="_v_images/1553214750_987.png" alt=""></p>
 
           
         
@@ -1330,7 +1330,7 @@
 </blockquote>
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer1</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">    String[] sc = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">if</span>(sc.length == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sc[sc.length - <span class="number">1</span>].length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552610027_18447.png" alt=""></p>
+<p>结果：<br><img src="_v_images/1552610027_18447.png" alt=""></p>
 <p>思路：</p>
 <blockquote>
 <p> 第一种方案的执行数据慢，说明<code>split</code>函数相当消耗时间（时间复杂度跟空间复杂度过高）<br> 那么我们不使用该函数了<br>首先应该考虑最后一个单词所在位置，它的前面一定是一个空格，它的后面可能没有任何字符，也可能是若干个空格<br>那么首先可以考虑把最后一个单词后面可能存在的空格去掉 ，  使用 <code>trim</code>函数 （也可以自己写方法去掉）<br>然后使用字符串索引函数找出最后一个空格的 index下标  ，简单的方法是使用<code>lastIndexOf</code><br>然后用字符串的长度减去最后一个空格下标再减去1 即可</p>
@@ -1338,14 +1338,14 @@
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer2</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">    s = s.trim();</span><br><span class="line">    <span class="keyword">int</span> lastSpaceIndex = s.lastIndexOf(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">return</span> s.length() - lastSpaceIndex - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果：<br>资源消耗较多，但是速度上去了。。</p>
-<p><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552611874_26434.png" alt=""></p>
+<p><img src="_v_images/1552611874_26434.png" alt=""></p>
 <p>思路：</p>
 <blockquote>
 <p>和方案2差不多的思路，但是不使用特别高性能的函数 ，如 <code>trim</code>等</p>
 </blockquote>
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">answer3</span> <span class="params">(String s)</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> size  = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = s.length() - <span class="number">1</span> ;  i &gt;= <span class="number">0</span>; i-- )&#123;</span><br><span class="line">            <span class="keyword">if</span>(size != <span class="number">0</span>  &amp;&amp; s.charAt(i) == <span class="string">' '</span>)&#123;<span class="keyword">break</span>;&#125;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) == <span class="string">' '</span>)&#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) != <span class="string">' '</span>)&#123;size++;&#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="/blog/2019/03/13/随机一题：58-最后一个单词的长度/1552614947_10549.png" alt=""></p>
+<p>结果：<br><img src="_v_images/1552614947_10549.png" alt=""></p>
 
           
         
@@ -1539,7 +1539,7 @@
 <blockquote>
 <p>当提交到leetcode后，发现如下显示…T_T, 问题是解决了，但是执行效率太低。</p>
 </blockquote>
-<p><img src="/blog/2019/03/07/771-宝石与石头-1/1552184267_6967.png" alt=""></p>
+<p><img src="_v_images/1552184267_6967.png" alt=""></p>
 <h3 id="第二种方案"><a href="#第二种方案" class="headerlink" title="第二种方案"></a>第二种方案</h3><p>思路：</p>
 <blockquote>
 <p>第一种思路中，所耗时太多，原因可能在于： 循环中每次都是全数组比较<br>所以改进，现在大前提比较J和S是否有相同的字符，有再进行第二层循环<br>在第二层循环中比较一个就从列表总剔除一个，减少循环次数（这里字符串的函数会比较方便）</p>
@@ -1550,7 +1550,7 @@
 <blockquote>
 <p>当提交到leetcode后，发现如下显示，相对第一种来说，在速度上明显提升，但是在内存上改善不明显。。</p>
 </blockquote>
-<p><img src="/blog/2019/03/07/771-宝石与石头-1/1552188325_11037.png" alt=""></p>
+<p><img src="_v_images/1552188325_11037.png" alt=""></p>
 <h3 id="第三种方案"><a href="#第三种方案" class="headerlink" title="第三种方案"></a>第三种方案</h3><p>思路：</p>
 <blockquote>
 <p>这种方案实际上是别人的方案西路并不算很高，但是这种思路很有意思<br>采用正则表达式的方案</p>
@@ -1561,7 +1561,7 @@
 <blockquote>
 <p>其实就是效率问题啦，速度比第一种快但是比第二种，内存占用也较高</p>
 </blockquote>
-<p><img src="/blog/2019/03/07/771-宝石与石头-1/1552206914_12955.png" alt=""></p>
+<p><img src="_v_images/1552206914_12955.png" alt=""></p>
 <h3 id="第四种方案"><a href="#第四种方案" class="headerlink" title="第四种方案"></a>第四种方案</h3><p>思路：</p>
 <blockquote>
 <p>可以使用hashmap的原理，记录S中每个字符的重复次数；<br>再用J的每个单字符串去读取重复次数并相加；</p>
@@ -1572,7 +1572,7 @@
 <blockquote>
 <p>感觉没有跳出循环查找的大圈，这里看到的执行效率也还将就，内存改善不明显。</p>
 </blockquote>
-<p><img src="/blog/2019/03/07/771-宝石与石头-1/1552207279_25307.png" alt=""></p>
+<p><img src="_v_images/1552207279_25307.png" alt=""></p>
 <h3 id="第五种方案"><a href="#第五种方案" class="headerlink" title="第五种方案"></a>第五种方案</h3><p>思路：</p>
 <blockquote>
 <p>最原始的双重for循环。。</p>
@@ -1583,7 +1583,7 @@
 <blockquote>
 <p>结果双重for循环还是里面最快的</p>
 </blockquote>
-<p><img src="/blog/2019/03/07/771-宝石与石头-1/1552207743_9813.png" alt=""></p>
+<p><img src="_v_images/1552207743_9813.png" alt=""></p>
 <h3 id="第六种方案"><a href="#第六种方案" class="headerlink" title="第六种方案"></a>第六种方案</h3><p>思路：</p>
 <blockquote>
 <p>该方案只是想比较一下第一种方案和第五方案的差距是在于<code>filter</code>函数上，还是<code>List&lt;String&gt; jc = Arrays.asList(J.split(&quot;&quot;));</code>上</p>
@@ -1592,7 +1592,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">anwser6</span> <span class="params">(String J, String S)</span></span>&#123;</span><br><span class="line">     <span class="comment">/* 字符串分割位字符列表*/</span></span><br><span class="line">     List&lt;String&gt; jc = Arrays.asList(J.split(<span class="string">""</span>));</span><br><span class="line">     List&lt;String&gt; sc = Arrays.asList(S.split(<span class="string">""</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> jewelsInStones = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/* 计算宝石数量 */</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; jc.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt; sc.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sc.get(j).equals(jc.get(i)))&#123;</span><br><span class="line">                jewelsInStones ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> jewelsInStones;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <blockquote>
-<p>如下图，果然，在第一种发方案中使用了 <code>filter</code>函数，还使用了箭头表达式，虽然使用方便，但对效率还是很有影响的。<br><img src="/blog/2019/03/07/771-宝石与石头-1/1552208198_18917.png" alt=""></p>
+<p>如下图，果然，在第一种发方案中使用了 <code>filter</code>函数，还使用了箭头表达式，虽然使用方便，但对效率还是很有影响的。<br><img src="_v_images/1552208198_18917.png" alt=""></p>
 </blockquote>
 <h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><hr>
 <ol>
@@ -1787,7 +1787,7 @@
 <blockquote>
 <p>三次自关联，在一定程度上非常占用系统资源，尤其是在表数据量较大的情况下，查询非常的耗时</p>
 </blockquote>
-<p> <img src="/blog/2019/02/22/180-连续出现的数字/1552209096_16500.png" alt=""></p>
+<p> <img src="_v_images/1552209096_16500.png" alt=""></p>
 
           
         
