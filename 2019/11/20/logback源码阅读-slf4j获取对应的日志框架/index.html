@@ -111,7 +111,7 @@
   <meta name="description" content="上一篇：logback源码阅读-跟着文档开始 回顾上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下  我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分：第一部分：获取一个serviceLoader第二部分：serviceLoader循环得到的providers都放到数组里面12345678910private static List&amp;lt;SLF4J">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="logback源码解读-slf4j获取对应的日志框架">
+<meta property="og:title" content="logback源码阅读-slf4j获取对应的日志框架">
 <meta property="og:url" content="https://silveryC.github.io/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/index.html">
 <meta property="og:site_name" content="耗子窝">
 <meta property="og:description" content="上一篇：logback源码阅读-跟着文档开始 回顾上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下  我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分：第一部分：获取一个serviceLoader第二部分：serviceLoader循环得到的providers都放到数组里面12345678910private static List&amp;lt;SLF4J">
@@ -120,9 +120,9 @@
 <meta property="og:image" content="http://www.plantuml.com/plantuml/svg/VP9VRz9G6CRl-HGdN8suiHklbcW2Hf8PN4pcPMzEQkUQO4lQPicycaeS81rgDZ86qw4NJiEWn6HhAT0lSyxfsHLVmPUUZjJ4UDMUzppdUN_ldp8sB5LMorYpKBgeoxXKmBAb6_lXo4yZRA9SgfoKR2l6dYehHHs_K8mxJJwLog6rXoY_WRZpBZo-H7_9iYNuh6Hkpzliu0rhUUptYQHHxvhLwsYxMBZ_95O_C_GzTQ6NIzWq4PbsYJkcpRVin4dbx_m7it0wO5sRrdjqwF5HRqFIh5tLp9h213tuZwUapITL7fmA5p9-_sWH5PJpIMsPXLOxr1-pmy-qVi6dKnvS4VyxRL-Y8dwzlsaf1eOMBTGWpm5KS4mxNynapO9jsHOu_kEQ1ntUQmZtPUwmtoVk0UltH7m-QT0ZFw8lOsiN-Dc5n-n1WfpLPW0lQSJzS7l-ZH_Tq6QBtmpfh0BzaxJqqyVFSskRMuNr6C5SJz-BVxCl5MiBlr9MCk5PXRKEYN-z166Dse8kiXDNnBq26VreXpySIUD1cxY_n8cT3W4QZh0I44aqyYUi0stQrAcmxbZqLJm4fQH5LMHtT2E2aBLLj8DBfhAAIb5bcMXWiaQT4MIWrJDMiu603trWMXABdF7yaXCHwK072l0XtbTXnAgVYD-7U3dU3dZx1m00">
 <meta property="og:image" content="https://silveryc.github.io/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/_v_images/20191121112425697_1258.png">
 <meta property="og:image" content="https://silveryc.github.io/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/_v_images/20191121104509664_29666.png">
-<meta property="og:updated_time" content="2019-11-21T06:51:13.796Z">
+<meta property="og:updated_time" content="2019-11-21T07:19:15.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="logback源码解读-slf4j获取对应的日志框架">
+<meta name="twitter:title" content="logback源码阅读-slf4j获取对应的日志框架">
 <meta name="twitter:description" content="上一篇：logback源码阅读-跟着文档开始 回顾上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下  我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分：第一部分：获取一个serviceLoader第二部分：serviceLoader循环得到的providers都放到数组里面12345678910private static List&amp;lt;SLF4J">
 <meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9x61aWHVxfpoTFKy1wXq0">
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>logback源码解读-slf4j获取对应的日志框架 | 耗子窝</title>
+  <title>logback源码阅读-slf4j获取对应的日志框架 | 耗子窝</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">logback源码解读-slf4j获取对应的日志框架
+          <h1 class="post-title" itemprop="name headline">logback源码阅读-slf4j获取对应的日志框架
               
             
           </h1>
@@ -361,7 +361,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-21 14:51:13" itemprop="dateModified" datetime="2019-11-21T14:51:13+08:00">2019-11-21</time>
+                <time title="修改时间：2019-11-21 15:19:15" itemprop="dateModified" datetime="2019-11-21T15:19:15+08:00">2019-11-21</time>
               
             
           </span>
