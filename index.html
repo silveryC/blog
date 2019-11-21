@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-21 14:05:14" itemprop="dateModified" datetime="2019-11-21T14:05:14+08:00">2019-11-21</time>
+                <time title="修改时间：2019-11-21 14:13:11" itemprop="dateModified" datetime="2019-11-21T14:13:11+08:00">2019-11-21</time>
               
             
           </span>
@@ -424,7 +424,7 @@
 </blockquote>
 <p>这就是为什么在代码中，会一句代码来对加载器进行检查： <code>loader = (cl == null) ? ClassLoader.getSystemClassLoader() : cl;</code></p>
 <hr>
-<h3 id="找到配置"><a href="#找到配置" class="headerlink" title="找到配置"></a>找到配置</h3><p>根据上面的分析，我在”\logback\logback-classic\src\main\resources\META-INF\services\”路径下，找到了名为<code>org.slf4j.spi.SLF4JServiceProvider</code>文件（文件直接以类名命名，以类名为搜索条件，这个主意真好）。<br>文件里面的内容是： <code>ch.qos.logback.classic.spi.LogbackServiceProvider</code>；<br><img src="20191121112425697_1258.png" alt=""><br>同时我也去看了看 <a href="https://github.com/apache/logging-log4j2/blob/master/log4j-slf4j18-impl/src/main/resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider" target="_blank" rel="noopener">log4j2</a> 的配置文件，也有一个名为<code>org.slf4j.spi.SLF4JServiceProvider</code>的文件。<br>内容是：<code>org.apache.logging.slf4j.SLF4JServiceProvider</code><br><img src="_v_images/20191121104509664_29666.png" alt=""><br>也就是说，只要：</p>
+<h3 id="找到配置"><a href="#找到配置" class="headerlink" title="找到配置"></a>找到配置</h3><p>根据上面的分析，我在”\logback\logback-classic\src\main\resources\META-INF\services\”路径下，找到了名为<code>org.slf4j.spi.SLF4JServiceProvider</code>文件（文件直接以类名命名，以类名为搜索条件，这个主意真好）。<br>文件里面的内容是： <code>ch.qos.logback.classic.spi.LogbackServiceProvider</code>；<br><img src="/blog/2019/11/20/logback源码解读-slf4j获取对应的日志框架/20191121112425697_1258.png" title="This is an image"><br><br>同时我也去看了看 <a href="https://github.com/apache/logging-log4j2/blob/master/log4j-slf4j18-impl/src/main/resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider" target="_blank" rel="noopener">log4j2</a> 的配置文件，也有一个名为<code>org.slf4j.spi.SLF4JServiceProvider</code>的文件。<br>内容是：<code>org.apache.logging.slf4j.SLF4JServiceProvider</code><br><img src="_v_images/20191121104509664_29666.png" alt=""><br>也就是说，只要：</p>
 <ol>
 <li>日志实现了<code>org.slf4j.spi.SLF4JServiceProvider</code>接口；</li>
 <li>并在“META-INF\services\”路径下添加一个名为：“org.slf4j.spi.SLF4JServiceProvider”的文件</li>
