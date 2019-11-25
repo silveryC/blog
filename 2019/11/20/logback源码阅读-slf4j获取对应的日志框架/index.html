@@ -116,15 +116,15 @@
 <meta property="og:site_name" content="耗子窝">
 <meta property="og:description" content="上一篇：logback源码阅读-跟着文档开始 回顾上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下  我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分：第一部分：获取一个serviceLoader第二部分：serviceLoader循环得到的providers都放到数组里面12345678910private static List&amp;lt;SLF4J">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9x61aWHVxfpoTFKy1wXq0">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00">
 <meta property="og:image" content="http://www.plantuml.com/plantuml/svg/VP9VRz9G6CRl-HGdN8suiHklbcW2Hf8PN4pcPMzEQkUQO4lQPicycaeS81rgDZ86qw4NJiEWn6HhAT0lSyxfsHLVmPUUZjJ4UDMUzppdUN_ldp8sB5LMorYpKBgeoxXKmBAb6_lXo4yZRA9SgfoKR2l6dYehHHs_K8mxJJwLog6rXoY_WRZpBZo-H7_9iYNuh6Hkpzliu0rhUUptYQHHxvhLwsYxMBZ_95O_C_GzTQ6NIzWq4PbsYJkcpRVin4dbx_m7it0wO5sRrdjqwF5HRqFIh5tLp9h213tuZwUapITL7fmA5p9-_sWH5PJpIMsPXLOxr1-pmy-qVi6dKnvS4VyxRL-Y8dwzlsaf1eOMBTGWpm5KS4mxNynapO9jsHOu_kEQ1ntUQmZtPUwmtoVk0UltH7m-QT0ZFw8lOsiN-Dc5n-n1WfpLPW0lQSJzS7l-ZH_Tq6QBtmpfh0BzaxJqqyVFSskRMuNr6C5SJz-BVxCl5MiBlr9MCk5PXRKEYN-z166Dse8kiXDNnBq26VreXpySIUD1cxY_n8cT3W4QZh0I44aqyYUi0stQrAcmxbZqLJm4fQH5LMHtT2E2aBLLj8DBfhAAIb5bcMXWiaQT4MIWrJDMiu603trWMXABdF7yaXCHwK072l0XtbTXnAgVYD-7U3dU3dZx1m00">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/20191121112425697_1258.png">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/20191121104509664_29666.png">
-<meta property="og:updated_time" content="2019-11-25T01:44:09.251Z">
+<meta property="og:updated_time" content="2019-11-25T06:07:57.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="logback源码阅读-slf4j获取对应的日志框架">
 <meta name="twitter:description" content="上一篇：logback源码阅读-跟着文档开始 回顾上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下  我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分：第一部分：获取一个serviceLoader第二部分：serviceLoader循环得到的providers都放到数组里面12345678910private static List&amp;lt;SLF4J">
-<meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9x61aWHVxfpoTFKy1wXq0">
+<meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00">
 
 
 
@@ -251,7 +251,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/blog/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">10</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">11</span></a>
   </li>
 
       
@@ -361,7 +361,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-25 09:44:09" itemprop="dateModified" datetime="2019-11-25T09:44:09+08:00">2019-11-25</time>
+                <time title="修改时间：2019-11-25 14:07:57" itemprop="dateModified" datetime="2019-11-25T14:07:57+08:00">2019-11-25</time>
               
             
           </span>
@@ -413,7 +413,7 @@
       
       
         <p><a href="https://pluscao.github.io/blog/2019/11/15/logback%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-%E8%B7%9F%E7%9D%80%E6%96%87%E6%A1%A3%E5%BC%80%E5%A7%8B/">上一篇：logback源码阅读-跟着文档开始</a></p>
-<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下<br><img src="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9x61aWHVxfpoTFKy1wXq0"></p>
+<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下<br><img src="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00"></p>
 <hr>
 <p>我们先来了解其中最核心一步：第二步，代码如下</p>
 <p>下面的代码可以看做两部分：<br>第一部分：获取一个<strong>serviceLoader</strong><br>第二部分：<strong>serviceLoader</strong>循环得到的providers都放到数组里面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;SLF4JServiceProvider&gt; <span class="title">findServiceProviders</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 第一部分</span></span><br><span class="line">    ServiceLoader&lt;SLF4JServiceProvider&gt; serviceLoader = ServiceLoader.load(SLF4JServiceProvider.class);</span><br><span class="line">    <span class="comment">// 第二部分</span></span><br><span class="line">    List&lt;SLF4JServiceProvider&gt; providerList = <span class="keyword">new</span> ArrayList&lt;SLF4JServiceProvider&gt;();</span><br><span class="line">    <span class="keyword">for</span> (SLF4JServiceProvider provider : serviceLoader) &#123;</span><br><span class="line">        providerList.add(provider);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> providerList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -550,7 +550,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
