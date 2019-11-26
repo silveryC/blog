@@ -1849,7 +1849,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #66ff08;
+  background: #f01191;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2945,13 +2945,9 @@ ul.breadcrumb li+li:last-child {
   overflow: hidden;
 }
 img.img-topic {
-  display: block;
-  margin-left: 0.7em;
-  margin-right: 0.7em;
-  padding: 0;
+  display: flex;
   align-items: center;
-  float: right;
-  clear: right;
+  justify-content: center;
 }
 .chinese-zodiac {
   float: right;
