@@ -1849,7 +1849,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff9ff;
+  background: #a654eb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2958,8 +2958,8 @@ img.img-topic {
 @font-face {
   font-family: 'chinese-zodiac';
   font-display: swap;
-  src: url("/fonts/chinese-zodiac.eot");
-  src: url("/fonts/chinese-zodiac.eot") format('embedded-opentype'), url("/fonts/chinese-zodiac.woff2") format('woff2'), url("/fonts/chinese-zodiac.woff") format('woff');
+  src: url("/blog/fonts/chinese-zodiac.eot");
+  src: url("/blog/fonts/chinese-zodiac.eot") format('embedded-opentype'), url("/blog/fonts/chinese-zodiac.woff2") format('woff2'), url("/blog/fonts/chinese-zodiac.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
