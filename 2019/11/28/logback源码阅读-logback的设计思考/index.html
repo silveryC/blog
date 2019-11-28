@@ -108,14 +108,18 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="在上一篇日志中，我去了解了关于监听者模式的相关内容，对于logback重要的几个类之间的逻辑架构关系更加了解了。 在这里记录一下。">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
 <meta property="og:title" content="logback源码阅读-logback的设计思考">
 <meta property="og:url" content="https://pluscao.github.io/blog/2019/11/28/logback源码阅读-logback的设计思考/index.html">
 <meta property="og:site_name" content="耗子窝">
+<meta property="og:description" content="在上一篇日志中，我去了解了关于监听者模式的相关内容，对于logback重要的几个类之间的逻辑架构关系更加了解了。 在这里记录一下。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-28T06:19:59.477Z">
+<meta property="og:updated_time" content="2019-11-28T07:46:18.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="logback源码阅读-logback的设计思考">
+<meta name="twitter:description" content="在上一篇日志中，我去了解了关于监听者模式的相关内容，对于logback重要的几个类之间的逻辑架构关系更加了解了。 在这里记录一下。">
 
 
 
@@ -335,12 +339,34 @@
                 
               
 
-              <time title="创建时间：2019-11-28 14:19:59" itemprop="dateCreated datePublished" datetime="2019-11-28T14:19:59+08:00">2019-11-28</time>
+              <time title="创建时间：2019-11-28 14:19:59 / 修改时间：15:46:18" itemprop="dateCreated datePublished" datetime="2019-11-28T14:19:59+08:00">2019-11-28</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/logback/" itemprop="url" rel="index"><span itemprop="name">logback</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -377,7 +403,32 @@
       
       
       
-        <a id="more"></a>
+        <p>在上一篇日志中，我去了解了关于监听者模式的相关内容，对于logback重要的几个类之间的逻辑架构关系更加了解了。<br>
+在这里记录一下。</p>
+<a id="more"></a>
+<p>logback其实最基本的就是一个监听者的模式，在<a href="http://logback.qos.ch/manual/architecture.html" target="_blank" rel="noopener">logbak的官方文档</a>中有这样一句话</p>
+<blockquote>
+<p>Logback is built upon three main classes: Logger, Appender and Layout</p>
+</blockquote>
+<p>说logback中三个重要的类是：Logger, Appender and Layout；</p>
+<hr>
+<h2 id="logger-appender">Logger, Appender</h2>
+<p>当我们决定打印日志时候，我们做了两个操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建一个logger</span></span><br><span class="line">Logger logger = LoggerFactory.getLogger(<span class="string">"chapters.introduction.HelloWorld1"</span>);</span><br><span class="line"><span class="comment">// 2.打印日志</span></span><br><span class="line">logger.debug(<span class="string">"Hello world!"</span>);</span><br></pre></td></tr></table></figure>
+<p>而在 <code>logger.debug(&quot;Hello world!&quot;);</code>处理中有一个我认为很重要的一行代码，：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buildLoggingEventAndAppend</span><span class="params">(<span class="keyword">final</span> String localFQCN, <span class="keyword">final</span> Marker marker, <span class="keyword">final</span> Level level, <span class="keyword">final</span> String msg, <span class="keyword">final</span> Object[] params,</span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">final</span> Throwable t)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这是重要的一行代码</span></span><br><span class="line">    LoggingEvent le = <span class="keyword">new</span> LoggingEvent(localFQCN, <span class="keyword">this</span>, level, msg, t, params);</span><br><span class="line">    le.setMarker(marker);</span><br><span class="line">    callAppenders(le);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为什么重要呢？因为我终于知道了其实logback就是一个监听者模式，只是做了很多易用的优化。<br>
+这也是我们需要在打印日志前先获得一个logger？【<font color="BurlyWood">因为logger其实就是一个事件源</font>】。<br>
+那么appender呢？【<font color="BurlyWood">一个事件监听器而已</font>】。</p>
+<p><em>（所以我们才会在<code>ch.qos.logback.classic.BasicConfigurator</code>中为logger设置appender的时候使用的是<code>rootLogger.addAppender(ca)</code>而不是<code>rootLogger.setAppender(ca)</code><br>
+因为一个事件源可以绑定多个事件监听器！）</em></p>
+<p>我们传入的&quot;Hello world!&quot;日志字符串其实就是logback所需要的事件了，只是在内部会把他包装成一个LoggingEvent，方便监听器处理。</p>
+<hr>
+<h2 id="appender-and-layout">Appender and Layout</h2>
+<p>既然已经知道Appender是一个事件监听器，那就可以知道它是在事件触发时执行某些具体操作的；<br>
+在logback中这些操作当然就是打印日志咯（根据不同的Appneder也可能是发邮件啊什么的…）；<br>
+Layout我认为是辅助Appender打印日志的，规定日志格式的一个类</p>
+
       
     </div>
 
@@ -394,6 +445,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/java/" rel="tag"># java</a>
+          
+        </div>
       
 
       
@@ -457,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#logger-appender"><span class="nav-text">Logger, Appender</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#appender-and-layout"><span class="nav-text">Appender and Layout</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

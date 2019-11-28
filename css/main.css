@@ -1849,7 +1849,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #79135c;
+  background: #d1ff34;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2979,7 +2979,7 @@ img.img-topic {
 }
 .icon-pig:before {
   content: '\e810';
-  color: #d9d919;
+  color: #fafad2;
 }
 .icon-horse:before {
   content: '\e813';
