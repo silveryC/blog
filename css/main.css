@@ -1849,7 +1849,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cbb8ff;
+  background: #ffffe3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2967,6 +2967,7 @@ img.img-topic {
   display: inline-block;
   font: normal normal normal 14px/1 chinese-zodiac;
   font-size: inherit;
+  color: #d9d919;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
