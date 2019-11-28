@@ -1849,7 +1849,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #373edf;
+  background: #6588c8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2979,13 +2979,14 @@ img.img-topic {
 }
 .icon-pig:before {
   content: '\e810';
-  color: #daa520;
+  color: #ffb6c1;
 }
 .icon-horse:before {
   content: '\e813';
 }
 .icon-rat:before {
   content: '\e816';
+  color: #dc143c;
 }
 .icon-goat:before {
   content: '\e818';
@@ -2995,6 +2996,7 @@ img.img-topic {
 }
 .icon-ox:before {
   content: '\e822';
+  color: #daa520;
 }
 .icon-dog:before {
   content: '\e825';
