@@ -108,22 +108,22 @@
 
 
 
-  <meta name="description" content="上一篇：logback源码阅读-跟着文档开始 回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;">
+  <meta name="description" content="回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;SLF4JServiceProvider&amp;gt">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="logback源码阅读-slf4j获取对应的日志框架">
 <meta property="og:url" content="https://pluscao.github.io/blog/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/index.html">
 <meta property="og:site_name" content="耗子窝">
-<meta property="og:description" content="上一篇：logback源码阅读-跟着文档开始 回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;">
+<meta property="og:description" content="回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;SLF4JServiceProvider&amp;gt">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00">
 <meta property="og:image" content="http://www.plantuml.com/plantuml/svg/VP9VRz9G6CRl-HGdN8suiHklbcW2Hf8PN4pcPMzEQkUQO4lQPicycaeS81rgDZ86qw4NJiEWn6HhAT0lSyxfsHLVmPUUZjJ4UDMUzppdUN_ldp8sB5LMorYpKBgeoxXKmBAb6_lXo4yZRA9SgfoKR2l6dYehHHs_K8mxJJwLog6rXoY_WRZpBZo-H7_9iYNuh6Hkpzliu0rhUUptYQHHxvhLwsYxMBZ_95O_C_GzTQ6NIzWq4PbsYJkcpRVin4dbx_m7it0wO5sRrdjqwF5HRqFIh5tLp9h213tuZwUapITL7fmA5p9-_sWH5PJpIMsPXLOxr1-pmy-qVi6dKnvS4VyxRL-Y8dwzlsaf1eOMBTGWpm5KS4mxNynapO9jsHOu_kEQ1ntUQmZtPUwmtoVk0UltH7m-QT0ZFw8lOsiN-Dc5n-n1WfpLPW0lQSJzS7l-ZH_Tq6QBtmpfh0BzaxJqqyVFSskRMuNr6C5SJz-BVxCl5MiBlr9MCk5PXRKEYN-z166Dse8kiXDNnBq26VreXpySIUD1cxY_n8cT3W4QZh0I44aqyYUi0stQrAcmxbZqLJm4fQH5LMHtT2E2aBLLj8DBfhAAIb5bcMXWiaQT4MIWrJDMiu603trWMXABdF7yaXCHwK072l0XtbTXnAgVYD-7U3dU3dZx1m00">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/20191121112425697_1258.png">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/20/logback源码阅读-slf4j获取对应的日志框架/20191121104509664_29666.png">
-<meta property="og:updated_time" content="2019-11-25T06:07:57.665Z">
+<meta property="og:updated_time" content="2019-11-28T08:14:51.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="logback源码阅读-slf4j获取对应的日志框架">
-<meta name="twitter:description" content="上一篇：logback源码阅读-跟着文档开始 回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;">
+<meta name="twitter:description" content="回顾 上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下   我们先来了解其中最核心一步：第二步，代码如下 下面的代码可以看做两部分： 第一部分：获取一个serviceLoader 第二部分：serviceLoader循环得到的providers都放到数组里面 12345678910private static List&amp;lt;SLF4JServiceProvider&amp;gt">
 <meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00">
 
 
@@ -361,7 +361,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-25 14:07:57" itemprop="dateModified" datetime="2019-11-25T14:07:57+08:00">2019-11-25</time>
+                <time title="修改时间：2019-11-28 16:14:51" itemprop="dateModified" datetime="2019-11-28T16:14:51+08:00">2019-11-28</time>
               
             
           </span>
@@ -420,8 +420,7 @@
       
       
       
-        <p><a href="https://pluscao.github.io/blog/2019/11/15/logback%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-%E8%B7%9F%E7%9D%80%E6%96%87%E6%A1%A3%E5%BC%80%E5%A7%8B/">上一篇：logback源码阅读-跟着文档开始</a></p>
-<h2 id="回顾">回顾</h2>
+        <h2 id="回顾">回顾</h2>
 <p>上一篇大致的浏览了一下获取一个logger，所干的事情，这里大概先回顾一下</p>
 <img src="http://www.plantuml.com/plantuml/svg/ipBKKtYneVdvb1KAMbe--UdfgKLkYSab-KMLUkcf9H013KqjBOKNVTkVza_B0GjOSraPwIayxLW9qPQMcPSId5fKbfcS6b2KNvQPabfK3DR3zRHlDqJVq_Kxd-wQydnMoxFfIv_kd_viJk_JheNF-YSysJVxwTGse7d6UbXbkDxlwG3QcPIOdFsolUVbt4KW8sQi1piL98XchPRM-psTN13T4FEURb_wjAy9Q8697hB0Y_rJdiwUfm3r3W00">
 <hr>
