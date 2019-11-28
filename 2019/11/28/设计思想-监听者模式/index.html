@@ -108,21 +108,21 @@
 
 
 
-  <meta name="description" content="5-事件监听模式 Write By SC on 2019-11-27 参考： java设计模式-回调、事件监听器、观察者模式 事件监听模式的大致流程如下   概念说明 如果我们界面上有一个按钮，那么我们的鼠标能够对这个按钮做什么？ 无非就是：单击按钮、双击按钮、移动按钮、滑过按钮之类的； 那么现在我想做：  当单击按钮时，使按钮变绿； 当移动按钮时，使按钮变红；  双击按钮和滑过按钮没有任何变化">
+  <meta name="description" content="在看logback源码的时候看见了ILoggingEvent，引发我学习一波事件监听器的知识">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计思想-监听者模式">
 <meta property="og:url" content="https://pluscao.github.io/blog/2019/11/28/设计思想-监听者模式/index.html">
 <meta property="og:site_name" content="耗子窝">
-<meta property="og:description" content="5-事件监听模式 Write By SC on 2019-11-27 参考： java设计模式-回调、事件监听器、观察者模式 事件监听模式的大致流程如下   概念说明 如果我们界面上有一个按钮，那么我们的鼠标能够对这个按钮做什么？ 无非就是：单击按钮、双击按钮、移动按钮、滑过按钮之类的； 那么现在我想做：  当单击按钮时，使按钮变绿； 当移动按钮时，使按钮变红；  双击按钮和滑过按钮没有任何变化">
+<meta property="og:description" content="在看logback源码的时候看见了ILoggingEvent，引发我学习一波事件监听器的知识">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.plantuml.com/plantuml/svg/AqWiAibCpYn8p2jHK7gog_l9xctFTarGKaWiLaZaIaaiIKnAB4w5oJoVFV7fX3LFPwu0ooTXo8E5axcuaXHqxHGIhHIURLxnjAs7IqzFJo4uFpTL8IS_BrqX9JKdiL81ACQL35CsVm94_uj5gryiN_QqVw86N0Z8UJvblYPN8aXjafN2ouPPp-SlVRfz4yJivxDQddKsF9lJYUP00000">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/28/设计思想-监听者模式/20191128110924454_31441.png">
 <meta property="og:image" content="https://pluscao.github.io/blog/2019/11/28/设计思想-监听者模式/20191128111104493_15335.png">
-<meta property="og:updated_time" content="2019-11-28T03:18:14.297Z">
+<meta property="og:updated_time" content="2019-11-28T03:22:34.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计思想-监听者模式">
-<meta name="twitter:description" content="5-事件监听模式 Write By SC on 2019-11-27 参考： java设计模式-回调、事件监听器、观察者模式 事件监听模式的大致流程如下   概念说明 如果我们界面上有一个按钮，那么我们的鼠标能够对这个按钮做什么？ 无非就是：单击按钮、双击按钮、移动按钮、滑过按钮之类的； 那么现在我想做：  当单击按钮时，使按钮变绿； 当移动按钮时，使按钮变红；  双击按钮和滑过按钮没有任何变化">
+<meta name="twitter:description" content="在看logback源码的时候看见了ILoggingEvent，引发我学习一波事件监听器的知识">
 <meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/AqWiAibCpYn8p2jHK7gog_l9xctFTarGKaWiLaZaIaaiIKnAB4w5oJoVFV7fX3LFPwu0ooTXo8E5axcuaXHqxHGIhHIURLxnjAs7IqzFJo4uFpTL8IS_BrqX9JKdiL81ACQL35CsVm94_uj5gryiN_QqVw86N0Z8UJvblYPN8aXjafN2ouPPp-SlVRfz4yJivxDQddKsF9lJYUP00000">
 
 
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="创建时间：2019-11-28 11:13:25 / 修改时间：11:18:14" itemprop="dateCreated datePublished" datetime="2019-11-28T11:13:25+08:00">2019-11-28</time>
+              <time title="创建时间：2019-11-28 11:13:25 / 修改时间：11:22:34" itemprop="dateCreated datePublished" datetime="2019-11-28T11:13:25+08:00">2019-11-28</time>
             
 
             
@@ -407,9 +407,8 @@
       
       
       
-        <a id="more"></a>
-<h1>5-事件监听模式</h1>
-<p>Write By SC on 2019-11-27</p>
+        <p>在看logback源码的时候看见了<code>ILoggingEvent</code>，引发我学习一波事件监听器的知识</p>
+<a id="more"></a>
 <p><a href="https://my.oschina.net/u/923324/blog/792857" target="_blank" rel="noopener">参考： java设计模式-回调、事件监听器、观察者模式</a></p>
 <p>事件监听模式的大致流程如下</p>
 <img src="http://www.plantuml.com/plantuml/svg/AqWiAibCpYn8p2jHK7gog_l9xctFTarGKaWiLaZaIaaiIKnAB4w5oJoVFV7fX3LFPwu0ooTXo8E5axcuaXHqxHGIhHIURLxnjAs7IqzFJo4uFpTL8IS_BrqX9JKdiL81ACQL35CsVm94_uj5gryiN_QqVw86N0Z8UJvblYPN8aXjafN2ouPPp-SlVRfz4yJivxDQddKsF9lJYUP00000">
@@ -661,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">5-事件监听模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念说明"><span class="nav-text">概念说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#疑难杂症"><span class="nav-text">疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-text">示例</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念说明"><span class="nav-text">概念说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#疑难杂症"><span class="nav-text">疑难杂症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-text">示例</span></a></li></ol></li></ol></div>
             
 
           </div>
